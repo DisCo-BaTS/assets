@@ -1,0 +1,6 @@
+portico.loglevel = WARN
+portico.connection = jgroups
+portico.lrc.tt = 30
+portico.jgroups.udp.bindAddress = LOOPBACK
+portico.wan.enabled = true
+portico.wan.router = discobats-wan-router-service:23114

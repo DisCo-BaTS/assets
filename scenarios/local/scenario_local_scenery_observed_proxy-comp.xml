@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_local_scenery_observed_proxy-comp.xml                                               #
+  # Last Updated: 2026-02-17 20:25:03                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <duration>0</duration>
+  <iterations>0</iterations>
+  
+  <library>
+    <artifact>example</artifact>
+    <suffix>-jar-with-dependencies</suffix>
+    <version>0.1-SNAPSHOT</version>
+    <group>de.uol.discobats.model.o0-testcase.libraries</group>
+  </library>
+  
+  <props>
+    <!-- STARBOARD HAND (GREEN) -->
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 1</name>
+      <rotation xsi:type="xs:double">0.0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.73984</latitude>
+          <longitude xsi:type="xs:double">8.20120</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark1</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 2</name>
+      <rotation xsi:type="xs:double">0.0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.78735</latitude>
+          <longitude xsi:type="xs:double">8.12596</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark2</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 3</name>
+      <rotation xsi:type="xs:double">0.0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.83224</latitude>
+          <longitude xsi:type="xs:double">8.06915</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark3</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 4</name>
+      <rotation xsi:type="xs:double">0.0</rotation>
+      <position>
+        <value xsi:type="position">
+          <longitude xsi:type="xs:double">7.95957</longitude>
+          <latitude xsi:type="xs:double">53.86150</latitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark4</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 5</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <longitude xsi:type="xs:double">7.86182</longitude>
+          <latitude xsi:type="xs:double">53.87150</latitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark5</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    
+    <!-- PORT HAND (RED) -->
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 1</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.74166</latitude>
+          <longitude xsi:type="xs:double">8.26031</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark6</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 2</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.79658</latitude>
+          <longitude xsi:type="xs:double">8.19654</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark7</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 3</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.86305</latitude>
+          <longitude xsi:type="xs:double">8.12898</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark8</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 4</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.93153</latitude>
+          <longitude xsi:type="xs:double">8.05568</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark9</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 5</name>
+      <rotation xsi:type="xs:double">0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.98484</latitude>
+          <longitude xsi:type="xs:double">8.19961</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark10</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+  </props>
+  
+  <actors>
+  
+  </actors>
+  
+  <reactors>
+    
+    <!-- PROXIED MAIN BEHAVIOUR -->
+    <!--
+    <reactor xsi:type="exampleContainerShip" timeStepSize="1">
+      
+      <behaviour xsi:type="proxyBehaviour">
+        <communicationAdapter xsi:type="exampleEmptyCommunicationAdapter"/>
+        <formatAdapter xsi:type="exampleEmptyFormatAdapter"/>
+        <dictionary>
+          <externalValues>
+            <value>
+              <name>name</name>
+              <path>ownship.name</path>
+            </value>
+            <value>
+              <name>weight</name>
+              <path>ownship.weight</path>
+              <type>double</type>
+            </value>
+            <value>
+              <name>latitude</name>
+              <path>ownship.latitude</path>
+            </value>
+            <value>
+              <name>longitude</name>
+              <path>ownship.longitude</path>
+            </value>
+            <value>
+              <name>other_weight</name>
+              <type>double</type>
+              <path>others[].weight</path>
+              <unit>MASS.GRAM</unit>
+              <prefix>KILO</prefix>
+            </value>
+            <value>
+              <name>superspeed</name>
+              <type>double</type>
+              <path>ownship.description.status.speed</path>
+              <unit>SPEED.SPEED_OF_LIGHT</unit>
+              <prefix>NONE</prefix>
+            </value>
+          </externalValues>
+          <input>
+            <translation>
+              <internalPath>self.components.external.superspeed</internalPath>
+              <externalPath>ownship.description.status.speed</externalPath>
+            </translation>
+            <translation>
+              <internalPath>self.main.speed</internalPath>
+              <externalPath>ownship.description.status.speed</externalPath>
+            </translation>
+          </input>
+          <output>
+            <translation>
+              <internalPath>self.main.name</internalPath>
+              <externalPath>ownship.name</externalPath>
+            </translation>
+            <translation>
+              <internalPath>self.main.weight</internalPath>
+              <externalPath>ownship.weight</externalPath>
+            </translation>
+            <translation>
+              <internalPath>self.main.position.longitude</internalPath>
+              <externalPath>ownship.longitude</externalPath>
+            </translation>
+            <translation>
+              <internalPath>self.main.position.latitude</internalPath>
+              <externalPath>ownship.latitude</externalPath>
+            </translation>
+            <translation>
+              <internalPath>env.vessel[].weight</internalPath>
+              <externalPath>others[].weight</externalPath>
+            </translation>
+          </output>
+        </dictionary>
+      </behaviour>
+      
+      <id>ship_external_1</id>
+      <name>External 1</name>
+      <imo xsi:type="xs:string">9461052</imo>
+      <mmsi xsi:type="xs:string">218774001</mmsi>
+      <callsign>DFKM42</callsign>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.95151</latitude>
+          <longitude xsi:type="xs:double">8.12517</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="xs:double">135.0</rotation>
+      <formString xsi:type="xs:double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+      <acceleration xsi:type="xs:double">0</acceleration>
+      <course xsi:type="xs:double">135.0</course>
+      <weight xsi:type="xs:double">66850</weight>
+      
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>position</attribute>
+            <attribute>weight</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    </reactor>-->
+    
+    <!-- PROXIED COMPONENT BEHAVIOUR -->
+    <reactor xsi:type="exampleContainerShip" timeStepSize="1">
+      
+      <components>
+        <component xsi:type="examplePlainComponent">
+          <behaviour xsi:type="proxyBehaviour">
+            <communicationAdapter xsi:type="exampleUDPCommunicationAdapter">
+              <address>10.16.0.3</address>
+              <remoteInPort>1337</remoteInPort>
+            </communicationAdapter>
+            <formatAdapter xsi:type="exampleXMLFormatAdapter"/>
+            <dictionary>
+              <externalValues>
+                <value>
+                  <name>name</name>
+                  <path>ownship.name</path>
+                </value>
+                <value>
+                  <name>weight</name>
+                  <path>ownship.status.weight</path>
+                  <type>double</type>
+                </value>
+                <value>
+                  <name>weight</name>
+                  <path>ownship.weight</path>
+                  <type>double</type>
+                </value>
+                <value>
+                  <name>speed</name>
+                  <type>double</type>
+                  <path>ownship.speed</path>
+                  <unit>SPEED.SPEED_OF_LIGHT</unit>
+                  <prefix>NONE</prefix>
+                </value>
+                <value>
+                  <name>speed</name>
+                  <type>double</type>
+                  <path>ownship.status.speed</path>
+                  <unit>SPEED.SPEED_OF_LIGHT</unit>
+                  <prefix>NONE</prefix>
+                </value>
+                <value>
+                  <name>latitude</name>
+                  <path>ownship.position.latitude</path>
+                </value>
+                <value>
+                  <name>latitude</name>
+                  <path>ownship.status.position.latitude</path>
+                </value>
+                <value>
+                  <name>longitude</name>
+                  <path>ownship.position.longitude</path>
+                </value>
+                <value>
+                  <name>longitude</name>
+                  <path>ownship.status.position.longitude</path>
+                </value>
+                <value>
+                  <name>other_weight</name>
+                  <type>double</type>
+                  <path>others[].weight</path>
+                  <unit>MASS.GRAM</unit>
+                  <prefix>KILO</prefix>
+                </value>
+              </externalValues>
+              <input>
+                <translation>
+                  <internalPath>self.components.external.superspeed</internalPath>
+                  <externalPath>ownship.status.speed</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>self.main.speed</internalPath>
+                  <externalPath>ownship.status.speed</externalPath>
+                </translation>
+              </input>
+              <output>
+                <translation>
+                  <internalPath>self.main.name</internalPath>
+                  <externalPath>ownship.name</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>self.main.speed</internalPath>
+                  <externalPath>ownship.speed</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>self.main.weight</internalPath>
+                  <externalPath>ownship.weight</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>self.main.position.longitude</internalPath>
+                  <externalPath>ownship.position.longitude</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>self.main.position.latitude</internalPath>
+                  <externalPath>ownship.position.latitude</externalPath>
+                </translation>
+                <translation>
+                  <internalPath>env.vessel[].weight</internalPath>
+                  <externalPath>others[].weight</externalPath>
+                </translation>
+              </output>
+            </dictionary>
+          </behaviour>
+        </component>
+      </components>
+      
+      <id>ship_external_1</id>
+      <name>External 1</name>
+      <imo xsi:type="xs:string">9461052</imo>
+      <mmsi xsi:type="xs:string">218774001</mmsi>
+      <callsign>DFKM42</callsign>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.95151</latitude>
+          <longitude xsi:type="xs:double">8.12517</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="xs:double">135.0</rotation>
+      <formString xsi:type="xs:double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+      <route>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.89200</latitude>
+            <longitude xsi:type="xs:double">7.76012</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.92355</latitude>
+            <longitude xsi:type="xs:double">7.73266</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.98416</latitude>
+            <longitude xsi:type="xs:double">8.23940</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+      </route>
+      <acceleration xsi:type="xs:double">0</acceleration>
+      <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+      <course xsi:type="xs:double">135.0</course>
+      <weight xsi:type="xs:double">66850</weight>
+      
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>speed</attribute>
+            <attribute>position</attribute>
+            <attribute>weight</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    </reactor>
+    
+    <!-- FULLY SIMULATED TRAFFIC PARTICIPANTS -->
+    <reactor xsi:type="exampleContainerShip" timeStepSize="1">
+      <id>ship1</id>
+      <name>Hamburg Express</name>
+      <imo xsi:type="xs:string">9461051</imo>
+      <mmsi xsi:type="xs:string">218774000</mmsi>
+      <callsign>DFKM2</callsign>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.85151</latitude>
+          <longitude xsi:type="xs:double">8.02517</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="xs:double">135.0</rotation>
+      <formString xsi:type="xs:double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+      <route>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">54.00200</latitude>
+            <longitude xsi:type="xs:double">7.65012</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.92355</latitude>
+            <longitude xsi:type="xs:double">7.73266</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.98416</latitude>
+            <longitude xsi:type="xs:double">8.23940</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+      </route>
+      <acceleration xsi:type="xs:double">0</acceleration>
+      <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+      <course xsi:type="xs:double">135.0</course>
+      <weight xsi:type="xs:double">66850</weight>
+      
+      <observedTypes>
+        <observedType>
+          <name>generalCargoShip</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>position</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    </reactor>
+    
+    <reactor xsi:type="generalCargoShip" timeStepSize="1">
+      <id>ship2</id>
+      <name>Anne-Sofie</name>
+      <flag>GERMANY</flag>
+      <imo xsi:type="xs:string">9376490</imo>
+      <mmsi xsi:type="xs:string">218412000</mmsi>
+      <callsign>DFMI2</callsign>
+      <assignedDomain>
+        <value xsi:type="trafficDomain">MARITIME</value>
+      </assignedDomain>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="xs:double">53.86312</latitude>
+          <longitude xsi:type="xs:double">8.08859</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="xs:double">0.0</rotation>
+      <formString>POLYGON ((0 0, 48.32 0, 48.32 299.97, 0 299.97, 0 0))</formString>
+      <speed xsi:type="xs:double">25</speed>
+      <route>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.95097</latitude>
+            <longitude xsi:type="xs:double">8.00909</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.99506</latitude>
+            <longitude xsi:type="xs:double">8.14631</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </waypoint>
+      </route>
+      <acceleration>0.015829013705211403</acceleration>
+      <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+      <length xsi:type="xs:double">160</length>
+      <maxSpeed xsi:type="xs:double">20.0</maxSpeed>
+      <width xsi:type="xs:double">24</width>
+      <course xsi:type="xs:double">0.0</course>
+      <draught xsi:type="xs:double">8.7</draught>
+      <homeHarbour>HAMBURG</homeHarbour>
+      <maxLoadingWeight xsi:type="xs:double">109576.0</maxLoadingWeight>
+      <emergencyDeclared>false</emergencyDeclared>
+      
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>position</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    
+    </reactor>
+    
+  </reactors>
+  
+  <observers>
+    <observer timeStepSize="10">
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>position</attribute>
+            <attribute>name</attribute>
+            <attribute>speed</attribute>
+            <attribute>rotation</attribute>
+          </attributes>
+        </observedType>
+        <observedType>
+          <name>lateralMark</name>
+          <attributes>
+            <attribute>position</attribute>
+            <attribute>rotation</attribute>
+            <attribute>name</attribute>
+            <attribute>markType</attribute>
+            <attribute>region</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+      <outputConfigs>
+        <outputConfig xsi:type="webSocketConfig">
+          <address>localhost</address>
+          <port>3001</port>
+        </outputConfig>
+      </outputConfigs>
+    </observer>
+  </observers>
+  
+</scenario>

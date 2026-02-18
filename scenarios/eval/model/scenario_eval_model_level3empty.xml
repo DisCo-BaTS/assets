@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_eval_model_level3empty.xml                                                          #
+  # Last Updated: 2026-02-17 20:25:06                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <configuration>
+    <runs>1</runs>
+    <duration>0</duration>
+    
+    <library>
+      <artifact>example-eval3</artifact>
+      <suffix>-jar-with-dependencies</suffix>
+      <version>0.1-SNAPSHOT</version>
+      <group>de.uol.discobats.model.o0-testcase.libraries</group>
+    </library>
+    
+    <output>
+      <observer timeStepSize="4">
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+              <property>name</property>
+              <property>rotation</property>
+              <property>speed</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+        <outputConfigs>
+          <outputConfig xsi:type="webSocketOutputConfig">
+            <address>localhost</address>
+            <port>3001</port>
+          </outputConfig>
+        </outputConfigs>
+      </observer>
+    </output>
+  </configuration>
+  
+  <scene>
+    <actors>
+      <actor xsi:type="unspecifiedSeagoingVessel" timeStepSize="1">
+        <id>own1</id>
+        <name>Own Ship 1</name>
+        <rotation xsi:type="double">0.0</rotation>
+        <mmsi xsi:type="string">211123456</mmsi>
+        <speed>
+          <value xsi:type="xs:double">2.0</value>
+          <unit>SPEED.KNOTS</unit>
+          <prefix>NONE</prefix>
+        </speed>
+        <position>
+          <value xsi:type="position">
+            <!-- 54.500552° N, 4.000263° E -->
+            <latitude xsi:type="double">54.500552</latitude>
+            <longitude xsi:type="double">4.000263</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="nullBehaviour"/>
+        <components>
+          <component xsi:type="captain" timeStepSize="1">
+            <executionGroup>2</executionGroup>
+          </component>
+          <component xsi:type="sensorDataProcessor" timeStepSize="1">
+            <executionGroup>1</executionGroup>
+            <components>
+              <component xsi:type="sensorAIS" timeStepSize="1">
+                <executionGroup>1</executionGroup>
+              </component>
+              <component xsi:type="sensorGPS" timeStepSize="1">
+                <executionGroup>1</executionGroup>
+              </component>
+            </components>
+          </component>
+        </components>
+        <observedTypes>
+          <observedType>
+            <name>seagoingVessel</name>
+            <properties>
+              <property>name</property>
+              <property>position</property>
+              <property>rotation</property>
+              <property>mmsi</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+      </actor>
+    </actors>
+    <scenery>
+      <!-- empty scenery -->
+    </scenery>
+  </scene>
+  <goals>
+    <goal xsi:type="routeGoal">
+      <targetActorId>own1</targetActorId>
+      <route>
+        <position>
+          <!-- 54.501745° N, 4.000204° E -->
+          <latitude xsi:type="double">54.501745</latitude>
+          <longitude xsi:type="double">4.000204</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </position>
+      </route>
+    </goal>
+  </goals>
+
+</scenario>

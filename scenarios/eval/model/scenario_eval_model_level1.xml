@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_eval_model_level1.xml                                                               #
+  # Last Updated: 2026-02-17 20:25:02                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <configuration>
+    <runs>1</runs>
+    <duration>0</duration>
+    
+    <library>
+      <artifact>example-eval1</artifact>
+      <suffix>-jar-with-dependencies</suffix>
+      <version>0.1-SNAPSHOT</version>
+      <group>de.uol.discobats.model.o0-testcase.libraries</group>
+    </library>
+    
+    <output>
+      <observer timeStepSize="1">
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+              <property>name</property>
+              <property>speed</property>
+              <property>rotation</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+        <outputConfigs>
+          <outputConfig xsi:type="webSocketOutputConfig">
+            <address>localhost</address>
+            <port>3001</port>
+          </outputConfig>
+        </outputConfigs>
+      </observer>
+    </output>
+  </configuration>
+  
+  <scene>
+    <actors>
+      
+      <actor xsi:type="unspecifiedVessel" timeStepSize="1">
+        <id>own1</id>
+        <name>Own Ship 1</name>
+        <rotation xsi:type="double">0.0</rotation>
+        <speed>
+          <value xsi:type="xs:double">2.0</value>
+          <unit>SPEED.KNOTS</unit>
+          <prefix>NONE</prefix>
+        </speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.5</latitude>
+            <longitude xsi:type="double">4.0</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="simpleStraightlineDrivingBehaviour"/>
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+      </actor>
+      
+      <actor xsi:type="unspecifiedVessel" timeStepSize="1">
+        <id>ref1</id>
+        <name>Reference Vessel 1</name>
+        <rotation xsi:type="double">350</rotation>
+        <speed xsi:type="double">0</speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.501111</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="simpleStraightlineDrivingBehaviour"/>
+      </actor>
+
+      <actor xsi:type="unspecifiedVessel" timeStepSize="1">
+        <id>ref2</id>
+        <name>Reference Vessel 2</name>
+        <rotation xsi:type="double">10</rotation>
+        <speed xsi:type="double">0</speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.501111</latitude>
+            <longitude xsi:type="double">4.000665</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="simpleStraightlineDrivingBehaviour"/>
+      </actor>
+    </actors>
+  </scene>
+  
+</scenario>

@@ -1,0 +1,1 @@
+del ..\..\..\*jaxb.index /S /Q

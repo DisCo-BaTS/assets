@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_eval_proxy_local.xml                                                                #
+  # Last Updated: 2026-02-17 20:25:02                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <configuration>
+    <runs>1</runs>
+    <duration>0</duration>
+    <library>
+      <artifact>example</artifact>
+      <suffix>-jar-with-dependencies</suffix>
+      <version>0.1-SNAPSHOT</version>
+      <group>de.uol.discobats.model.o0-testcase.libraries</group>
+    </library>
+    <output>
+      <observer timeStepSize="25">
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+              <property>name</property>
+              <property>speed</property>
+              <property>rotation</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+        <outputConfigs>
+          <outputConfig xsi:type="webSocketOutputConfig">
+            <address>localhost</address>
+            <port>3001</port>
+          </outputConfig>
+        </outputConfigs>
+      </observer>
+    </output>
+  </configuration>
+  
+  <scene>
+    <actors>
+      <!-- PROXY ACTOR -->
+      <actor xsi:type="exampleContainerShip" timeStepSize="1">
+        <id>external</id>
+        <name>External 1</name>
+        <imo xsi:type="xs:string">9461052</imo>
+        <mmsi xsi:type="xs:string">218774001</mmsi>
+        <callsign>DFKM3</callsign>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.912832</latitude>
+            <longitude xsi:type="xs:double">7.861748</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </position>
+        <rotation xsi:type="xs:double">135.0</rotation>
+        <formString xsi:type="xs:double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+        <acceleration xsi:type="xs:double">0</acceleration>
+        <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+        <course xsi:type="xs:double">135.0</course>
+        <weight xsi:type="xs:double">66850</weight>
+        
+        <components>
+          <component xsi:type="examplePlainComponent">
+            <behaviour xsi:type="proxyBehaviour">
+              <communicationAdapter xsi:type="exampleUDPCommunicationAdapter">
+                <address>192.168.1.10</address>
+                <remoteInPort>1337</remoteInPort>
+                <localOutPort>1338</localOutPort>
+                <localInPort>1339</localInPort>
+              </communicationAdapter>
+              <formatAdapter xsi:type="exampleXMLFormatAdapter"/>
+              <dictionary>
+                <externalValues>
+                  <value>
+                    <name>in_own_speed</name>
+                    <type>double</type>
+                    <path>ownship.status.speed</path>
+                  </value>
+                  <value>
+                    <name>out_own_speed</name>
+                    <path>ownship.speed</path>
+                    <type>double</type>
+                    <unit>SPEED.SPEED_OF_LIGHT</unit>
+                    <prefix>NONE</prefix>
+                  </value>
+                  <value>
+                    <name>out_own_name</name>
+                    <path>ownship.name</path>
+                  </value>
+                  <value>
+                    <name>out_own_weight</name>
+                    <path>ownship.weight</path>
+                    <type>double</type>
+                  </value>
+                  <value>
+                    <name>out_own_latitude</name>
+                    <path>ownship.position.latitude</path>
+                  </value>
+                  <value>
+                    <name>out_own_longitude</name>
+                    <path>ownship.position.longitude</path>
+                  </value>
+                  <value>
+                    <name>out_others_weight</name>
+                    <type>double</type>
+                    <path>others[].weight</path>
+                    <unit>MASS.GRAM</unit>
+                    <prefix>KILO</prefix>
+                  </value>
+                </externalValues>
+                <input>
+                  <translation>
+                    <internalPath>self.main.speed</internalPath>
+                    <externalValue>in_own_speed</externalValue>
+                  </translation>
+                </input>
+                <output>
+                  <translation>
+                    <internalPath>self.main.speed</internalPath>
+                    <externalValue>out_own_speed</externalValue>
+                  </translation>
+                  <translation>
+                    <internalPath>self.main.name</internalPath>
+                    <externalValue>out_own_name</externalValue>
+                  </translation>
+                  <translation>
+                    <internalPath>self.main.weight</internalPath>
+                    <externalValue>out_own_weight</externalValue>
+                  </translation>
+                  <translation>
+                    <internalPath>self.main.position.longitude</internalPath>
+                    <externalValue>out_own_longitude</externalValue>
+                  </translation>
+                  <translation>
+                    <internalPath>self.main.position.latitude</internalPath>
+                    <externalValue>out_own_latitude</externalValue>
+                  </translation>
+                  <translation>
+                    <internalPath>env.vessel[].weight</internalPath>
+                    <externalValue>out_others_weight</externalValue>
+                  </translation>
+                </output>
+              </dictionary>
+            </behaviour>
+          </component>
+        </components>
+        
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <attributes>
+              <attribute>name</attribute>
+              <attribute>speed</attribute>
+              <attribute>position</attribute>
+              <attribute>weight</attribute>
+            </attributes>
+          </observedType>
+        </observedTypes>
+      </actor>
+      <!-- FULLY SIMULATED ACTOR -->
+      <actor xsi:type="exampleContainerShip" timeStepSize="1">
+        <id>internal</id>
+        <name>Internal 1</name>
+        <imo xsi:type="xs:string">9461051</imo>
+        <mmsi xsi:type="xs:string">218774000</mmsi>
+        <callsign>DFKM2</callsign>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="xs:double">53.85151</latitude>
+            <longitude xsi:type="xs:double">8.02517</longitude>
+            <altitude xsi:type="xs:double">0.0</altitude>
+          </value>
+        </position>
+        <rotation xsi:type="xs:double">135.0</rotation>
+        <formString xsi:type="xs:double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+        <acceleration xsi:type="xs:double">0</acceleration>
+        <behaviour xsi:type="simpleFollowRouteBehaviour"/>
+        <course xsi:type="xs:double">135.0</course>
+        <weight xsi:type="xs:double">66850</weight>
+      </actor>
+    </actors>
+    <scenery>
+      <!-- empty scenery -->
+    </scenery>
+  </scene>
+  
+  <goals>
+    <goal xsi:type="routeGoal">
+      <targetActorId>external</targetActorId>
+      <route>
+        <position>
+          <latitude xsi:type="double">53.903529</latitude>
+          <longitude xsi:type="double">7.566147</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </position>
+      </route>
+    </goal>
+    <goal xsi:type="routeGoal">
+      <targetActorId>internal</targetActorId>
+      <route>
+        <position>
+          <latitude xsi:type="xs:double">54.00200</latitude>
+          <longitude xsi:type="xs:double">7.65012</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </position>
+        <position>
+          <latitude xsi:type="xs:double">53.92355</latitude>
+          <longitude xsi:type="xs:double">7.73266</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </position>
+        <position>
+          <latitude xsi:type="xs:double">53.98416</latitude>
+          <longitude xsi:type="xs:double">8.23940</longitude>
+          <altitude xsi:type="xs:double">0.0</altitude>
+        </position>
+      </route>
+    </goal>
+  </goals>
+
+</scenario>

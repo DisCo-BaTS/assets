@@ -1,0 +1,12 @@
+# ================================
+# Portico RTI Initialization Data
+# ================================
+# This file contains configuration options for Portico.
+# All options are formatted as name=value pairs, the '#' and '!' characters mark comment lines
+# To make use of this file, put it in the directory that the simulation application is executed from,
+# or set the RTI_RID_FILE environment variable to point at wherever it is located.
+
+portico.loglevel = INFO
+portico.connection = jgroups
+portico.lrc.tt = 30
+portico.wan.enabled = false

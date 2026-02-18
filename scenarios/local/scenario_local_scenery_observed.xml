@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_local_scenery_observed.xml                                                          #
+  # Last Updated: 2026-02-17 20:25:02                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <duration>0</duration>
+  <iterations>0</iterations>
+  
+  <library>
+    <artifact>example</artifact>
+    <suffix>-jar-with-dependencies</suffix>
+    <version>0.1-SNAPSHOT</version>
+    <group>de.uol.discobats.model.o0-testcase.libraries</group>
+  </library>
+  
+  <props>
+    <!-- STARBOARD HAND (GREEN) -->
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 1</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.73984</latitude>
+          <longitude xsi:type="double">8.20120</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark1</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 2</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.78735</latitude>
+          <longitude xsi:type="double">8.12596</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark2</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 3</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.83224</latitude>
+          <longitude xsi:type="double">8.06915</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark3</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 4</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.86396</latitude>
+          <longitude xsi:type="double">7.95957</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark4</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Star 5</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.87271</latitude>
+          <longitude xsi:type="double">7.86182</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark5</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    
+    <!-- PORT HAND (RED) -->
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 1</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.74166</latitude>
+          <longitude xsi:type="double">8.26031</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark6</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 2</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.79658</latitude>
+          <longitude xsi:type="double">8.19654</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark7</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 3</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.86305</latitude>
+          <longitude xsi:type="double">8.12898</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark8</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 4</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.93153</latitude>
+          <longitude xsi:type="double">8.05068</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark9</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+    <prop xsi:type="lateralMark">
+      <name>Lateral Mark Port 5</name>
+      <rotation>0</rotation>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.98484</latitude>
+          <longitude xsi:type="double">8.19961</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <markType>
+        <value xsi:type="lateralMarkType">PORT_HAND</value>
+      </markType>
+      <region>
+        <value xsi:type="region">REGION_A</value>
+      </region>
+      <number>lateralMark10</number>
+      <shape>
+        <value xsi:type="lateralMarkShape">CONE</value>
+      </shape>
+    </prop>
+  </props>
+  
+  <actors>
+  
+  </actors>
+  
+  <reactors>
+    <reactor xsi:type="exampleContainerShip" timeStepSize="1">
+      <id>ship1</id>
+      <name>Hamburg Express</name>
+      <imo xsi:type="string">9461051</imo>
+      <mmsi xsi:type="string">218774000</mmsi>
+      <callsign>DFKM2</callsign>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.85151</latitude>
+          <longitude xsi:type="double">8.02517</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="double">135.0</rotation>
+      <formString xsi:type="double">POLYGON ((0 0, 48 0, 48 366, 0 366, 0 0))</formString>
+      <route>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="double">53.89200</latitude>
+            <longitude xsi:type="double">7.76012</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="double">53.92355</latitude>
+            <longitude xsi:type="double">7.73266</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="double">53.98416</latitude>
+            <longitude xsi:type="double">8.23940</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </waypoint>
+      </route>
+      <acceleration xsi:type="double">0</acceleration>
+      <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+      <course xsi:type="double">135.0</course>
+      
+      <observedTypes>
+        <observedType>
+          <name>generalCargoShip</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>position</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    </reactor>
+    <reactor xsi:type="generalCargoShip" timeStepSize="1">
+      <id>ship2</id>
+      <name>Anne-Sofie</name>
+      <flag>GERMANY</flag>
+      <imo xsi:type="string">9376490</imo>
+      <mmsi xsi:type="string">218412000</mmsi>
+      <callsign>DFMI2</callsign>
+      <assignedDomain>
+        <value xsi:type="trafficDomain">MARITIME</value>
+      </assignedDomain>
+      <position>
+        <value xsi:type="position">
+          <latitude xsi:type="double">53.86312</latitude>
+          <longitude xsi:type="double">8.08859</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </value>
+      </position>
+      <rotation xsi:type="double">0.0</rotation>
+      <formString>POLYGON ((0 0, 48.32 0, 48.32 299.97, 0 299.97, 0 0))</formString>
+      <speed xsi:type="double">25</speed>
+      <route>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="double">53.95097</latitude>
+            <longitude xsi:type="double">8.00909</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </waypoint>
+        <waypoint>
+          <value xsi:type="position">
+            <latitude xsi:type="double">53.99506</latitude>
+            <longitude xsi:type="double">8.14631</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </waypoint>
+      </route>
+      <acceleration>0.015829013705211403</acceleration>
+      <behaviour xsi:type="observingSimpleFollowRouteBehaviour"/>
+      <length xsi:type="double">160</length>
+      <maxSpeed xsi:type="double">20.0</maxSpeed>
+      <width xsi:type="double">24</width>
+      <course xsi:type="double">0.0</course>
+      <draught xsi:type="double">8.7</draught>
+      <homeHarbour>HAMBURG</homeHarbour>
+      <maxLoadingWeight xsi:type="double">109576.0</maxLoadingWeight>
+      <emergencyDeclared>false</emergencyDeclared>
+      
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>name</attribute>
+            <attribute>position</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+    
+    </reactor>
+  </reactors>
+  
+  <observers>
+    <observer timeStepSize="2">
+      <observedTypes>
+        <observedType>
+          <name>vessel</name>
+          <attributes>
+            <attribute>position</attribute>
+            <attribute>name</attribute>
+            <attribute>speed</attribute>
+            <attribute>rotation</attribute>
+          </attributes>
+        </observedType>
+        <observedType>
+          <name>lateralMark</name>
+          <attributes>
+            <attribute>position</attribute>
+            <attribute>name</attribute>
+            <attribute>markType</attribute>
+            <attribute>region</attribute>
+          </attributes>
+        </observedType>
+      </observedTypes>
+      <outputConfigs>
+        <outputConfig xsi:type="webSocketConfig">
+          <address>localhost</address>
+          <port>3001</port>
+        </outputConfig>
+      </outputConfigs>
+    </observer>
+  </observers>
+  
+</scenario>

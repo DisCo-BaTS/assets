@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--####################################################################################################
+  # This file is part of the Distributed Component-Based Traffic Simulation (DisCo-BaTS) project.      #
+  # Copyright (C) 2026 David Reiher <https://github.com/dvdrhr>                                        #
+  #                                                                                                    #
+  # This program is free software: you can redistribute it and/or modify it under the terms of the     #
+  # GNU Lesser General Public License version 3 as published by the Free Software Foundation           #
+  # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;          #
+  # without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          #
+  # See the GNU Lesser General Public License version 3 for more details.                              #
+  # You should have received a copy of the GNU Lesser General Public License along with this program.  #
+  # If not, see <https://www.gnu.org/licenses/lgpl+gpl-3.0.txt/>.                                      #
+  #                                                                                                    #
+  # Module: environment                                                                                #
+  # File: scenario_eval_model_level2.xml                                                               #
+  # Last Updated: 2026-02-17 20:25:07                                                                  #
+  ####################################################################################################-->
+
+<scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <configuration>
+    <runs>1</runs>
+    <duration>0</duration>
+    
+    <library>
+      <artifact>example-eval2</artifact>
+      <suffix>-jar-with-dependencies</suffix>
+      <version>0.1-SNAPSHOT</version>
+      <group>de.uol.discobats.model.o0-testcase.libraries</group>
+    </library>
+    
+    <output>
+      <observer timeStepSize="4">
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+              <property>name</property>
+              <property>speed</property>
+              <property>rotation</property>
+            </properties>
+          </observedType>
+          <observedType>
+            <name>lateralMark</name>
+            <properties>
+              <property>position</property>
+              <property>name</property>
+              <property>markType</property>
+              <property>region</property>
+            </properties>
+          </observedType>
+          <observedType>
+            <name>waterbody</name>
+            <properties>
+              <property>width</property>
+              <property>length</property>
+              <property>position</property>
+            </properties>
+          </observedType>
+        </observedTypes>
+        <outputConfigs>
+          <outputConfig xsi:type="webSocketOutputConfig">
+            <address>localhost</address>
+            <port>3001</port>
+          </outputConfig>
+        </outputConfigs>
+      </observer>
+    </output>
+  </configuration>
+  
+  <scene>
+    <actors>
+      <actor xsi:type="unspecifiedSeagoingVessel" timeStepSize="1">
+        <id>own1</id>
+        <name>Own Ship 1</name>
+        <rotation xsi:type="double">0.0</rotation>
+        <speed>
+          <value xsi:type="xs:double">2.0</value>
+          <unit>SPEED.KNOTS</unit>
+          <prefix>NONE</prefix>
+        </speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.4995</latitude>
+            <longitude xsi:type="double">3.9997</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="simpleFollowRouteAvoidanceBehaviour"/>
+        <observedTypes>
+          <observedType>
+            <name>vessel</name>
+            <properties>
+              <property>position</property>
+              <property>rotation</property>
+            </properties>
+          </observedType>
+          <observedType>
+            <name>lateralMark</name>
+            <properties>
+              <property>position</property>
+              <property>markType</property>
+              <propert>color</propert>
+            </properties>
+          </observedType>
+        </observedTypes>
+      </actor>
+      
+      <actor xsi:type="unspecifiedSeagoingVessel" timeStepSize="1">
+        <id>ref1</id>
+        <name>Reference Vessel 1</name>
+        <rotation xsi:type="double">350</rotation>
+        <speed xsi:type="double">0</speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.501011</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="nullBehaviour"/>
+      </actor>
+      <actor xsi:type="unspecifiedSeagoingVessel" timeStepSize="1">
+        <id>ref2</id>
+        <name>Reference Vessel 2</name>
+        <rotation xsi:type="double">10</rotation>
+        <speed xsi:type="double">0</speed>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.5011</latitude>
+            <longitude xsi:type="double">4.000665</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <behaviour xsi:type="nullBehaviour"/>
+      </actor>
+    
+    </actors>
+    <scenery>
+      
+      <prop xsi:type="waterbody">
+        <id>area1</id>
+        <name>Waterbody 1</name>
+        <width xsi:type="double">125</width>
+        <length xsi:type="double">325</length>
+        <rotation>0</rotation>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.501005</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <usableBy>
+          <domain xsi:type="trafficDomain">MARITIME</domain>
+        </usableBy>
+      </prop>
+      
+      <!-- PORT HAND (RED) -->
+      <prop xsi:type="lateralMark">
+        <id>mark1</id>
+        <name>Lateral Port 1</name>
+        <rotation>0</rotation>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.50125</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <markType>
+          <value xsi:type="lateralMarkType">PORT_HAND</value>
+        </markType>
+        <region>
+          <value xsi:type="region">REGION_A</value>
+        </region>
+        <number>lateralMark1</number>
+      </prop>
+      <prop xsi:type="lateralMark">
+        <id>mark2</id>
+        <name>Lateral Port 2</name>
+        <rotation>0</rotation>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.5015</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <markType>
+          <value xsi:type="lateralMarkType">PORT_HAND</value>
+        </markType>
+        <region>
+          <value xsi:type="region">REGION_A</value>
+        </region>
+        <number>lateralMark2</number>
+      </prop>
+      <prop xsi:type="lateralMark">
+        <id>mark3</id>
+        <name>Lateral Port 3</name>
+        <rotation>0</rotation>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.50175</latitude>
+            <longitude xsi:type="double">4.000278</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <markType>
+          <value xsi:type="lateralMarkType">PORT_HAND</value>
+        </markType>
+        <region>
+          <value xsi:type="region">REGION_A</value>
+        </region>
+        <number>lateralMark3</number>
+      </prop>
+      <!-- STARBOARD HAND (GREEN) -->
+      <prop xsi:type="lateralMark">
+        <id>mark4</id>
+        <name>Lateral Mark Star 1</name>
+        <rotation>0</rotation>
+        <position>
+          <value xsi:type="position">
+            <latitude xsi:type="double">54.5003</latitude>
+            <longitude xsi:type="double">4.00005</longitude>
+            <altitude xsi:type="double">0.0</altitude>
+          </value>
+        </position>
+        <markType>
+          <value xsi:type="lateralMarkType">STARBOARD_HAND</value>
+        </markType>
+        <region>
+          <value xsi:type="region">REGION_A</value>
+        </region>
+        <number>lateralMark3</number>
+      </prop>
+    </scenery>
+  </scene>
+  
+  <goals>
+    <goal xsi:type="routeGoal">
+      <targetActorId>own1</targetActorId>
+      <route>
+        <position>
+          <latitude xsi:type="double">54.50235</latitude>
+          <longitude xsi:type="double">4.0006</longitude>
+          <altitude xsi:type="double">0.0</altitude>
+        </position>
+      </route>
+    </goal>
+  </goals>
+
+</scenario>
