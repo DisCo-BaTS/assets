@@ -33,19 +33,19 @@
     <distribution>
       <targets>
         <target xsi:type="sshTarget">
-          <id>rpi</id>
-          <address>192.168.1.3</address>
-          <username>pi</username>
-          <password>ka&amp;wz9VK</password>
+          <id>remote-target-1</id>
+          <address>IP_OR_FQDN</address>
+          <username>USERNAME</username>
+          <password>PASSWORD</password>
         </target>
       </targets>
       <assignments>
         <assignment>
-          <target>rpi</target>
+          <target>remote-target-1</target>
           <actor>ship_ext_mtcas</actor>
         </assignment>
         <assignment>
-          <target>rpi</target>
+          <target>remote-target-1</target>
           <actor>ship_ext_target</actor>
         </assignment>
       </assignments>
@@ -185,7 +185,7 @@
             <behaviour xsi:type="proxyBehaviour">
               <mode>FREE</mode>
               <outputCommunicationAdapter xsi:type="exampleUDPCommunicationAdapter">
-                <address>192.168.1.10</address>
+                <address>IP_OR_FQDN</address>
                 <remoteInPort>1337</remoteInPort>
                 <localOutPort>1338</localOutPort>
               </outputCommunicationAdapter>

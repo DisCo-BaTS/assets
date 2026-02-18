@@ -168,7 +168,7 @@
             <behaviour xsi:type="proxyBehaviour">
               <mode>FREE</mode>
               <outputCommunicationAdapter xsi:type="exampleUDPCommunicationAdapter">
-                <address>192.168.1.10</address>
+                <address>IP_OR_FQDN</address>
                 <remoteInPort>1337</remoteInPort>
                 <localOutPort>1338</localOutPort>
               </outputCommunicationAdapter>
